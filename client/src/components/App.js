@@ -8,25 +8,25 @@ import NewRecipe from "../pages/NewRecipe";
 function App() {
   const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    // auto-login
-    fetch("/me").then((r) => {
-      if (r.ok) {
-        r.json().then((user) => setUser(user));
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   // auto-login
+  //   fetch("/me").then((r) => {
+  //     if (r.ok) {
+  //       r.json().then((user) => setUser(user));
+  //     }
+  //   });
+  // }, []);
 
-  if (!user) return <Login onLogin={setUser} />;
+  // if (!user) return <Login onLogin={setUser} />;
 
   return (
     <>
-      <NavBar user={user} setUser={setUser} />
+      {/* <NavBar user={user} setUser={setUser} /> */}
       <main>
         <Switch>
-          <Route path="/new">
+          {/* <Route path="/new">
             <NewRecipe user={user} />
-          </Route>
+          </Route> */}
           <Route path="/">
             <RecipeList />
           </Route>
